@@ -1,0 +1,20 @@
+{% extends "AppFitLife/parent.html" %}
+
+{% load static %}
+
+{% block title %} Python - Nicolas Torres {% endblock %}
+
+{% block content %}
+    <h1>Buscar Comida:</h1>
+
+    <form action="{% url 'search' %}" method="GET"> 
+
+        <input type="text" name="name" id="name" placeholder="Write food's name">
+    
+        <input type="submit" value="Search Food">
+    
+    
+    </form>
+    <h2>{{ mensaje }}</h2>
+{% endblock %}
+

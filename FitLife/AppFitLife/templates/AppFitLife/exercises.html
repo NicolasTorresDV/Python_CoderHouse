@@ -1,0 +1,30 @@
+{% extends "AppFitLife/parent.html" %}
+
+{% load static %}
+
+{% block title %} Python - Nicolas Torres {% endblock %}
+
+{% block content %}
+    <h1>Ejercicios</h1>
+
+    <form action="{% url 'exercises' %}" method="POST"> {% csrf_token %}
+
+        {{ form.as_p }}
+    
+        <input type="submit" value="Save exercise">
+    
+    
+    </form>
+
+    <h3>{{ mensaje }}</h3>
+
+
+    <ul>
+        {% for ex in exercises %}
+            <li>{{ ex.name }} - {{ex.description}}</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
+

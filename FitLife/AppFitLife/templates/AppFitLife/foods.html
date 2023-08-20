@@ -1,0 +1,27 @@
+{% extends "AppFitLife/parent.html" %}
+
+{% load static %}
+
+{% block title %} Python - Nicolas Torres {% endblock %}
+
+{% block content %}
+    <h1>Comidas Saludables</h1>
+
+    <form action="{% url 'foods' %}" method="POST"> {% csrf_token %}
+
+        {{ form.as_p }}
+    
+        <input type="submit" value="Save Food">
+    
+    
+    </form>
+
+    <h3>{{ mensaje }}</h3>
+
+
+    <ul>
+        {% for food in foods %}
+            <li>{{ food.name }} - {{food.recipe}} - {{food.calories}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

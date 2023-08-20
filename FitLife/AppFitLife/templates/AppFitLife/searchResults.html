@@ -1,0 +1,24 @@
+{% extends "AppFitLife/parent.html" %}
+
+{% load static %}
+
+{% block title %} Python - Nicolas Torres {% endblock %}
+
+{% block content %}
+
+{% if foods %}
+
+    <h1>Results:</h1>
+    {% for food in foods %}
+
+        <h3>{{ food.name }} - {{ food.recipe }} - {{ food.calories }}</h3>
+    {% endfor %}
+
+
+{% else %}
+
+    <h1>Not found</h1>
+
+{% endif %}
+
+{% endblock %}
